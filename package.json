@@ -1,0 +1,14 @@
+{
+  "name": "ai-video-ad-tutorial",
+  "version": "1.0.0",
+  "description": "Tutorial pembuatan video iklan dengan AI",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "start": "tsc && npx serve public"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "serve": "^14.2.0"
+  }
+}
