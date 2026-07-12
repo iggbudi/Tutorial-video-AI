@@ -15,7 +15,7 @@ export const wizardSteps: WizardStep[] = [
     time: "15 menit",
     biaya: "Rp 0",
     detail:
-      "Ketik aja: 'Aku jualan sambel bawang, pedasnya nampol, cocok buat ayam goreng. Bikinin naskah iklan 30 detik dong.' ChatGPT langsung kasih naskah lengkap — udah ada hook pembuka, deskripsi rasa, sampai kalimat penutup.",
+      "Ketik aja: 'Aku jualan sambel bawang, pedesnya nampol, cocok buat ayam goreng. Bikinin naskah iklan 30 detik dong.' ChatGPT langsung kasih naskah lengkap — udah ada hook pembuka, deskripsi rasa, sampai kalimat penutup.",
     action: "Buka ChatGPT → ceritain produkmu",
     link: "https://chat.openai.com",
   },
@@ -68,6 +68,34 @@ export const demoExamples: BeforeAfter[] = [
       "💭 'Bingung... hari ini ngomongin apa lagi ya?' — caption cuma 1 kalimat, isinya sama kayak kemarin, lama-lama nggak upload karena kehabisan ide.",
     after:
       "💡 ChatGPT kasih 30 ide konten dalam 5 menit: '3 alasan sambel ini beda dari yang lain', 'Reaksi pelanggan yang udah nyoba', 'Resep simpel pakai sambel ini', tinggal pilih dan eksekusi.",
+  },
+];
+
+export interface Testimonial {
+  name: string;
+  role: string;
+  text: string;
+  result: string;
+}
+
+export const testimonials: Testimonial[] = [
+  {
+    name: "Bu Ani",
+    role: "Penjual Keripik Tempe, Bandung",
+    text: "Dulu cuma upload foto produk doang sekarang bisa bikin video harian. Views naik 5x lipat dalam 2 minggu!",
+    result: "Views: 200 → 1.000 per video",
+  },
+  {
+    name: "Mas Dimas",
+    role: "Frozen Food, Surabaya",
+    text: "Nggak nyangka ternyata gampang banget. Suaranya natural, videonya keliatan profesional. Pelanggan nanya 'pake videografer ya?'",
+    result: "Orderan naik 40% dalam 1 bulan",
+  },
+  {
+    name: "Bu Sari",
+    role: "Sambal Kemasan, Tangerang",
+    text: "Sebulan cuma modal Rp 0. Naskah dari ChatGPT, suara dari ElevenLabs, edit di CapCut. Nggak perlu laptop, semua dari HP.",
+    result: "Hemat Rp 500rb/bulan (tidak lagi sewa editor)",
   },
 ];
 

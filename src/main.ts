@@ -1,21 +1,57 @@
-import { wizardSteps, demoExamples, faqItems, costTiers } from "./data.js";
+import { wizardSteps, demoExamples, faqItems, costTiers, testimonials } from "./data.js";
 
 function renderHero(): void {
   const hero = document.getElementById("hero")!;
   hero.innerHTML = `
     <div class="hero-inner">
-      <div class="hero-badge">🥘 Buat yang Jualan Sambel, Kripik, Frozen Food</div>
+      <div class="hero-badge">🥘 Rahasia Video Jualan yang Keliatan Pro — Padahal dari Dapur</div>
       <h1>Nggak Berani di Depan Kamera?<br>Tetap Bisa Bikin Video Jualan.</h1>
-      <p>Foto produk dari HP + naskah dari AI + suara narator.</p>
-      <p class="hero-sub">Tanpa syuting. Tanpa kamera. Cuma dari hape kamu.</p>
+      <p class="hero-vivid">Bayangin: 1 video tiap hari dari dapur, views naik, orderan masuk — semua pakai HP.</p>
+      <p>Foto produk dari HP + naskah dari AI + suara narator profesional.</p>
+      <div class="hero-compare">
+        <div class="hero-compare-item">
+          <span class="hero-compare-old">Sewa editor</span>
+          <span class="hero-compare-price">Rp 500rb/video</span>
+        </div>
+        <div class="hero-compare-vs">→</div>
+        <div class="hero-compare-item hero-compare-new">
+          <span class="hero-compare-old">Pakai AI</span>
+          <span class="hero-compare-price">Rp 0/video</span>
+        </div>
+      </div>
       <div class="hero-price">Mulai <span>Rp 0</span></div>
       <p class="hero-gratis">30 video pertama gratis. Nggak pakai kartu kredit.</p>
-      <a href="#wizard" class="hero-cta">📱 Coba Bikin Video Pertama, Gratis →</a>
+      <a href="#wizard" class="hero-cta">📱 Mulai Sekarang — Gratis, Nggak Perlu Kartu Kredit →</a>
       <div class="hero-stats">
         <div><strong>⏱ 1 jam</strong><br>per video</div>
         <div><strong>📱 HP doang</strong><br>nggak perlu laptop</div>
         <div><strong>🇮🇩 Indonesia</strong><br>nggak perlu Inggris</div>
       </div>
+    </div>
+  `;
+}
+
+function renderSocialProof(): void {
+  const sp = document.getElementById("social-proof")!;
+  sp.innerHTML = `
+    <div class="section-header">
+      <p class="section-label">💬 BUKTI NYATA</p>
+      <h2>Mereka Sudah Coba</h2>
+      <p class="section-desc">UMKM kuliner lain sudah pakai cara ini. Hasilnya?</p>
+    </div>
+    <div class="testimonial-scroll">
+      ${testimonials
+        .map(
+          (t) => `
+        <div class="testimonial-card">
+          <div class="testimonial-text">"${t.text}"</div>
+          <div class="testimonial-result">${t.result}</div>
+          <div class="testimonial-author">
+            <strong>${t.name}</strong> · ${t.role}
+          </div>
+        </div>`
+        )
+        .join("")}
     </div>
   `;
 }
@@ -26,7 +62,7 @@ function renderWizard(): void {
     <div class="section-header">
       <p class="section-label">📋 3 LANGKAH AJA</p>
       <h2>Video Pertama Kamu</h2>
-      <p class="section-desc">Dari nol sampai siap upload. Semua pakai HP.</p>
+      <p class="section-desc">Dari nol sampai siap upload. Semua pakai HP. Hemat Rp 500rb/video.</p>
     </div>
     <div class="wizard-steps">
       ${wizardSteps
@@ -84,7 +120,7 @@ function renderCost(): void {
   c.innerHTML = `
     <div class="section-header">
       <p class="section-label">💰 BIAYA</p>
-      <h2>Cuma 3 Tools, 2 Di Antaranya Gratis Selamanya</h2>
+      <h2>Hemat Rp 500rb/Video. Cuma 3 Tools, 2 Gratis Selamanya.</h2>
     </div>
     <div class="cost-cards">
       ${costTiers
@@ -143,6 +179,7 @@ function initProgressBar(): void {
 
 document.addEventListener("DOMContentLoaded", () => {
   renderHero();
+  renderSocialProof();
   renderWizard();
   renderDemo();
   renderCost();
